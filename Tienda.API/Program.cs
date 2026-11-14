@@ -1,3 +1,5 @@
+using Tienda.Datos;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+// Registrar ProductoDatos para Inyección de Dependencias
+builder.Services.AddScoped<Tienda.Datos.ProductoDatos>();
 
 var app = builder.Build();
 
